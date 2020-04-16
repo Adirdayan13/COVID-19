@@ -32,6 +32,7 @@ class Worldwide extends Component {
               X
             </p>
             <br />
+            <h2>Live worldwide status</h2>
             <h2>{this.formatDate(this.state.results.Date.slice(0, 10))}</h2>
             <p>New confirmed cases: {this.state.results.Global.NewConfirmed}</p>
             <p>
