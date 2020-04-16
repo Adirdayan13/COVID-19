@@ -97,3 +97,12 @@ button:hover {
     background-position: 100%;
   }
 }
+
+@media screen and (max-width: 480px) {
+  button {
+    width: 30%;
+  }
+  .worldwide {
+    margin-top: 10%;
+  }
+}
