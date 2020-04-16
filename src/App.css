@@ -106,3 +106,12 @@ button:hover {
     margin-top: 10%;
   }
 }
+
+@media screen and (max-height: 380px) {
+  button {
+    width: 30%;
+  }
+  .worldwide {
+    margin-top: 10%;
+  }
+}
