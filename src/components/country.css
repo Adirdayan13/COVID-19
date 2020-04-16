@@ -1,0 +1,48 @@
+.eachday {
+  border: 1px solid;
+  background: brown;
+  padding: 1%;
+}
+
+.x {
+  float: right;
+  margin: 0;
+}
+
+.country {
+  background-image: url("/covid-bg1.jpg");
+  background-size: cover;
+  padding: 3%;
+  border-radius: 10px;
+  color: white;
+  width: inherit;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.country-results {
+  width: 100vw;
+}
+
+.country-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: -webkit-fill-available;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
