@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { animateScroll } from "react-scroll";
+import Img from "react-image";
 import "./country.css";
 
 // import { Bar, Line, Pie } from "react-chartjs-2";
@@ -8,6 +9,11 @@ import Chart from "react-apexcharts";
 class Country extends Component {
   constructor(props) {
     super(props);
+    this.fallback = () => {
+      if (this.props.fallbackSrc) {
+        this.setState({ failed: true });
+      }
+    };
     this.state = {
       countrySearch: true,
       countryResults: false,
@@ -62,7 +68,6 @@ class Country extends Component {
       .then(
         results => (
           this.scrollToBottom(),
-          console.log(results),
           this.setState({
             ...this.state,
             countryResults: true,
@@ -137,7 +142,6 @@ class Country extends Component {
   }
 
   render() {
-    console.log("this.state: ", this.state);
     return (
       <div className="country-wrapper">
         {this.state.countrySearch && (
@@ -160,10 +164,27 @@ class Country extends Component {
         {this.state.results ? (
           <div className="country-results">
             <br />
+            <h2>{this.state.country}</h2>
+            <Img
+              className="flag"
+              alt="country-flag"
+              src={`https://cdn.countryflags.com/thumbs/${this.state.country.toLowerCase()}/flag-400.png`}
+            />
+            <div class="numbers">
+              <p className="confirmed">
+                Confirmed cases: {this.state.results[0].Confirmed}
+              </p>
+              <p className="recovered">
+                Recovered cases: {this.state.results[0].Recovered}
+              </p>
+              <p className="deaths">
+                Deaths cases: {this.state.results[0].Deaths}
+              </p>
+            </div>
+            <br />
             <button style={{ marginBottom: "1%" }} onClick={this.diagonal}>
               Change view
             </button>
-            <p>Check / Uncheck the box in order to display / hide column</p>
             <Chart
               options={this.state.options}
               series={this.state.series}
@@ -171,9 +192,6 @@ class Country extends Component {
               height="450"
               width="100%"
             />
-            <p style={{ margin: "0" }}>
-              Last 30 days status of {this.state.country}
-            </p>
           </div>
         ) : null}
       </div>

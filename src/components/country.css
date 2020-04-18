@@ -31,6 +31,33 @@
   width: -webkit-fill-available;
 }
 
+.numbers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flag {
+  width: 50px;
+}
+
+.numbers p {
+  width: fit-content;
+}
+
+.confirmed {
+  border-bottom: 5px solid brown;
+}
+
+.recovered {
+  border-bottom: 5px solid rgb(102, 218, 38);
+}
+
+.deaths {
+  border-bottom: 5px solid;
+}
+
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
