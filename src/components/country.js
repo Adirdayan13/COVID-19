@@ -142,6 +142,7 @@ class Country extends Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="country-wrapper">
         {this.state.countrySearch && (
@@ -164,11 +165,11 @@ class Country extends Component {
         {this.state.results ? (
           <div className="country-results">
             <br />
-            <h2>{this.state.country}</h2>
+            <h2>{this.state.results[0].Country}</h2>
             <Img
               className="flag"
               alt="country-flag"
-              src={`https://cdn.countryflags.com/thumbs/${this.state.country.toLowerCase()}/flag-400.png`}
+              src={`https://cdn.countryflags.com/thumbs/${this.state.results[0].Country.toLowerCase()}/flag-400.png`}
             />
             <div class="numbers">
               <p className="confirmed">
