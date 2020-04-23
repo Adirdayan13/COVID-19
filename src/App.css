@@ -169,9 +169,9 @@ button:hover {
   .info-div {
     margin-bottom: 10px !important;
   }
-  .built {
+  /* .built {
     margin-bottom: 15%;
-  }
+  } */
 }
 
 @media screen and (max-height: 380px) {
