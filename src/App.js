@@ -113,7 +113,6 @@ class App extends Component {
         ) : null}
         {this.state.info && (
           <div className="built">
-            <h4>This website built by Adir Dayan</h4>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -125,6 +124,7 @@ class App extends Component {
                 src="/github-logo.svg"
               />
             </a>
+            <h4>Built by Adir Dayan 2020 &copy;</h4>
           </div>
         )}
       </div>

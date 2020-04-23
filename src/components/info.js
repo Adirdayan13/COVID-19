@@ -6,7 +6,7 @@ class Info extends Component {
     return (
       <div className="info-div">
         <h2>
-          The data set on this website is provided by{" "}
+          Data on this website is provided by{" "}
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -14,8 +14,9 @@ class Info extends Component {
           >
             Covid19api
           </a>
+          ,
           <br />
-          which get live updates from{" "}
+          data sourced from{" "}
           <a
             target="_blank"
             rel="noopener noreferrer"
