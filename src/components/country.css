@@ -28,7 +28,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: -webkit-fill-available;
+  width: 100%;
+  grid-row: 5/7;
+  margin-top: 5%;
 }
 
 .numbers {

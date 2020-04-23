@@ -142,7 +142,6 @@ class Country extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="country-wrapper">
         {this.state.countrySearch && (

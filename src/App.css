@@ -6,18 +6,36 @@ body {
   background: aliceblue;
 }
 
-.App {
+h1 {
   display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.info {
+  grid-column: 2/3;
+  margin: 0;
+  grid-row: 1/2;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 30px;
+}
+
+.App {
+  display: grid;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   background: aliceblue;
+  grid-template-columns: 1fr;
+  grid-template-rows: 75px 30px 100px 1fr 120px;
 }
 
 .header {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 30px;
   align-items: center;
   height: 75px;
   width: 100%;
@@ -25,6 +43,8 @@ body {
   color: white;
   box-shadow: 0 8px 6px -6px black;
   font-family: "Merriweather", serif;
+  grid-column: 1/2;
+  grid-row: 1/2;
 }
 
 p {
@@ -57,7 +77,10 @@ input {
 
 .show {
   display: flex;
+  justify-content: center;
   align-items: baseline;
+  grid-column: 1/2;
+  grid-row: 3/4;
 }
 
 button {
@@ -75,6 +98,11 @@ button:hover {
   color: white;
 }
 
+.earth-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .earth {
   width: 300px;
   height: 300px;
@@ -82,6 +110,8 @@ button:hover {
   background-image: url("/earth.jpg");
   box-shadow: -20px -20px 50px 2px #000 inset, 0 0 20px 2px #000;
   animation: earth 30s linear alternate infinite;
+  grid-column: 1/2;
+  grid-row: 4/5;
 }
 
 .date {
@@ -90,6 +120,22 @@ button:hover {
   justify-content: flex-end;
   margin-right: 5%;
   margin-top: 1%;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  padding-right: 2%;
+}
+
+.covid-o {
+  width: 30px;
+}
+
+.github {
+  width: 30px;
+}
+
+.built {
+  grid-column: 1/2;
+  grid-row: 5/6;
 }
 
 @keyframes earth {
@@ -99,8 +145,29 @@ button:hover {
 }
 
 @media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+    align-items: center;
+    margin-left: 5%;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  h3 {
+    width: 150px;
+    font-size: 1rem;
+  }
   button {
     width: 30%;
+  }
+  .info {
+    width: 25px;
+  }
+  .info-div {
+    margin-bottom: 10px !important;
+  }
+  .built {
+    margin-bottom: 15%;
   }
 }
 

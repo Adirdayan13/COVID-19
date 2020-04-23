@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  grid-row: 5/7;
+  margin-top: 5%;
 }
 
 .x {
