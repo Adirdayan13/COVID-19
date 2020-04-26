@@ -25,13 +25,15 @@ if (dev) {
 app.get("/api/worldwide", (req, res) => {
   fetch("https://api.covid19api.com/summary")
     .then(res => res.text())
-    .then(body => res.json(JSON.parse(body)));
+    .then(body => res.json(JSON.parse(body)))
+    .catch(err => res.json({ error: true }));
 });
 
 app.get("/api/:country", (req, res) => {
   fetch(`https://api.covid19api.com/total/country/${req.params.country}`)
     .then(res => res.text())
-    .then(body => res.json(JSON.parse(body)));
+    .then(body => res.json(JSON.parse(body)))
+    .catch(err => res.json({ error: true }));
 });
 
 const server = createServer(app);

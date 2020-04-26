@@ -9,12 +9,8 @@ import Chart from "react-apexcharts";
 class Country extends Component {
   constructor(props) {
     super(props);
-    this.fallback = () => {
-      if (this.props.fallbackSrc) {
-        this.setState({ failed: true });
-      }
-    };
     this.state = {
+      error: false,
       countrySearch: true,
       countryResults: false,
       options: {
@@ -64,12 +60,17 @@ class Country extends Component {
   getCountry() {
     fetch(`/api/${this.state.country}`)
       .then(res => res.json())
-      .then(results => (results = results.reverse()))
+      .then(results =>
+        results.message || results.error
+          ? this.setState({ error: true })
+          : (results = results.reverse())
+      )
       .then(
         results => (
           this.scrollToBottom(),
           this.setState({
             ...this.state,
+            error: false,
             countryResults: true,
             results,
             options: {
@@ -108,7 +109,10 @@ class Country extends Component {
           })
         )
       )
-      .catch(err => console.log("err: ", err));
+      .catch(
+        err => console.log("err: ", err),
+        this.setState({ results: false })
+      );
   }
 
   handleChange(e) {
@@ -144,6 +148,11 @@ class Country extends Component {
   render() {
     return (
       <div className="country-wrapper">
+        {this.state.error && !this.state.results && (
+          <p className="error">
+            No results, please try again with a valid country.
+          </p>
+        )}
         {this.state.countrySearch && (
           <div className="country">
             <p className="x" onClick={this.props.closeCountry}>

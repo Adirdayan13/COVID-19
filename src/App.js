@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { animateScroll } from "react-scroll";
 import "./App.css";
-import Worldwide from "./components/general";
+import Worldwide from "./components/worldwide";
 import Country from "./components/country";
 import Info from "./components/info";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       general: false,
       country: false,

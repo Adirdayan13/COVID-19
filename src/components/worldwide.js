@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./general.css";
+import "./worldwide.css";
 
 class Worldwide extends Component {
   constructor() {
